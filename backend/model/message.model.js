@@ -5,16 +5,16 @@ const messageSchema = new Schema(
     senderId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true, // Fixed typo
+      required: true,
     },
     receiverId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true, // Fixed typo and corrected the field name
+      required: true, 
     },
     message: {
       type: String,
-      required: true, // Fixed typo
+      required: true, 
     },
   },
   { timestamps: true }
