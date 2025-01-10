@@ -36,6 +36,8 @@ export const signup = async (req, res) => {
         fullName: newUser.fullName,
         username: newUser.username,
         profilePic: newUser.profilePic,
+        loggedIn: true,
+        message: "Signup success",
       });
     } else {
       res.status(400).json({ error: "invalid user data" });
@@ -60,6 +62,8 @@ export const login = async (req, res) => {
       fullName: user.fullName,
       username: user.username,
       profilePic: user.profilePic,
+      loggedIn: true,
+        message: "login success",
     });
   } catch (error) {
     console.log("error in signup", error.message);
@@ -78,4 +82,3 @@ export const logout = (req, res) => {
     res.status(500).json({ error: "internal server error" });
   }
 };
- 
