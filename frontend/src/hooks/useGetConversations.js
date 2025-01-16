@@ -9,10 +9,10 @@ const useGetConversations = () => {
       try {
         const res = await fetch("/api/users");
         const data = await res.json();
-        setConversations(data);
         if (data.error) {
           throw new Error(data.error);
         }
+        setConversations(data);
       } catch (error) {
         toast.error(error.message);
       } finally {

@@ -3,7 +3,7 @@ import Conversation from "../sidebar/Conversation";
 import useGetConversations from "../../hooks/useGetConversations";
 
 const Conversations = () => {
-  const { conversations } = useGetConversations();
+  const { loading ,conversations } = useGetConversations();
 
   return (
     <div
@@ -13,6 +13,7 @@ const Conversations = () => {
       {conversations.map((conversation) => (
         <Conversation key={conversation._id} conversation={conversation} />
       ))}
+      {loading ? <span className='loading loading-spinner mx-auto'></span> : null}
     </div>
   );
 };

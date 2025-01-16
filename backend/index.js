@@ -18,7 +18,6 @@ const connectToMongoDB = async () => {
     console.log("Error in connecting to mongodb");
   }
 };
- 
 
 app.use(cors());
 app.use(express.json());
@@ -31,4 +30,5 @@ app.use("/api/users", userRoutes);
 server.listen(PORT, () => {
   connectToMongoDB();
   console.log(`server is running in port ${PORT}`);
+  
 });
